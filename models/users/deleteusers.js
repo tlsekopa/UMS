@@ -11,8 +11,9 @@ exports.deleteUsers = function (username_value)
 
     con.connect(function(err){
         if (err) throw err
-        values = [{}]
-        var sql = "DELETE FROM users WHERE username =" + username_value 
-        con.query(sql, values)
+        //values = [{}]
+        var sql = "DELETE FROM users WHERE username = '" + username_value +"'"
+        con.query(sql/*values*/)
+        console.log(sql)
     })
 }
